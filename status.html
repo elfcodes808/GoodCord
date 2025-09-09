@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="logo">GoodCord</div>
     <nav>
@@ -16,15 +17,31 @@
     </nav>
   </header>
 
-  <section id="status-section" style="padding: 3rem 2rem; max-width: 900px; margin: auto;">
+  <!-- Hero Section -->
+  <section id="hero" style="padding: 4rem 2rem; background: linear-gradient(135deg, #7289da, #99aab5); text-align:center;">
     <h1>System Status</h1>
+    <p>Current server and API status</p>
+  </section>
+
+  <!-- Status Info -->
+  <section style="padding: 3rem 2rem; max-width: 900px; margin:auto;">
     <div id="status-info"></div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 GoodCord. All rights reserved.</p>
   </footer>
 
+  <!-- Scripts -->
   <script src="data.js"></script>
+  <script>
+    const statusDiv = document.getElementById('status-info');
+    statusDiv.innerHTML = `
+      <p><strong>Server:</strong> ${data.status.server}</p>
+      <p><strong>API:</strong> ${data.status.api}</p>
+      <p><strong>Last Checked:</strong> ${data.status.last_checked}</p>
+    `;
+  </script>
 </body>
 </html>
