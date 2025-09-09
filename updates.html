@@ -18,7 +18,7 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="hero" style="padding: 4rem 2rem; background: linear-gradient(135deg, #7289da, #99aab5); text-align:center;">
+  <section style="padding: 4rem 2rem; background: linear-gradient(135deg, #7289da, #99aab5); text-align:center;">
     <h1>Updates</h1>
     <p>Latest changes and releases for GoodCord</p>
   </section>
@@ -33,16 +33,19 @@
     <p>&copy; 2025 GoodCord. All rights reserved.</p>
   </footer>
 
-  <!-- Scripts -->
+  <!-- Scripts (at the bottom!) -->
   <script src="data.js"></script>
   <script>
+    // Make sure div exists and data is loaded
     const updatesDiv = document.getElementById('updates-list');
-    data.updates.forEach(update => {
-      const div = document.createElement('div');
-      div.style.marginBottom = "1.5rem";
-      div.innerHTML = `<h3>${update.version} - ${update.date}</h3><p>${update.details}</p>`;
-      updatesDiv.appendChild(div);
-    });
+    if (updatesDiv && data && data.updates) {
+      data.updates.forEach(update => {
+        const div = document.createElement('div');
+        div.style.marginBottom = "1.5rem";
+        div.innerHTML = `<h3>${update.version} - ${update.date}</h3><p>${update.details}</p>`;
+        updatesDiv.appendChild(div);
+      });
+    }
   </script>
 </body>
 </html>
