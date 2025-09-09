@@ -1,48 +1,122 @@
-body {
-  font-family: Arial, sans-serif;
+/* Reset */
+* {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
-  background-color: #f5f5f5;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+body {
+  background: #f5f5f5;
+  color: #333;
+}
+
+/* Header */
 header {
-  background-color: #2c2f33;
-  color: #fff;
-  padding: 1rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 3rem;
+  background: #2c2f33;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 header nav a {
-  color: #fff;
-  margin-left: 1rem;
+  color: white;
   text-decoration: none;
+  margin-left: 2rem;
+  transition: 0.3s;
 }
 
+header nav a:hover {
+  color: #7289da;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+/* Hero */
 #hero {
+  background: linear-gradient(135deg, #7289da, #99aab5);
+  color: white;
   text-align: center;
-  padding: 4rem 2rem;
-  background-color: #7289da;
-  color: #fff;
+  padding: 6rem 2rem;
+}
+
+#hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+#hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
 .btn {
-  background-color: #99aab5;
-  padding: 0.8rem 1.5rem;
+  padding: 0.8rem 2rem;
+  background: #99aab5;
+  color: white;
   text-decoration: none;
-  color: #fff;
   border-radius: 5px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-section {
-  padding: 2rem;
+.btn:hover {
+  background: #7289da;
 }
 
-footer {
+/* Features */
+#features {
+  padding: 4rem 2rem;
   text-align: center;
-  padding: 1rem;
-  background-color: #2c2f33;
-  color: #fff;
+}
+
+.feature-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+  margin-bottom: 1rem;
+  color: #7289da;
+}
+
+/* Download & Contact */
+#download, #contact {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+#download p, #contact p {
+  margin-bottom: 1rem;
+}
+
+/* Footer */
+footer {
+  background: #2c2f33;
+  color: white;
+  text-align: center;
+  padding: 2rem;
 }
