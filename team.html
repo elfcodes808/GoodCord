@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Header -->
   <header>
     <div class="logo">GoodCord</div>
     <nav>
@@ -16,15 +17,32 @@
     </nav>
   </header>
 
-  <section id="team-section" style="padding: 3rem 2rem; max-width: 900px; margin: auto;">
+  <!-- Hero Section -->
+  <section id="hero" style="padding: 4rem 2rem; background: linear-gradient(135deg, #7289da, #99aab5); text-align:center;">
     <h1>Our Team</h1>
+    <p>Meet the people behind GoodCord</p>
+  </section>
+
+  <!-- Team List -->
+  <section style="padding: 3rem 2rem; max-width: 900px; margin:auto;">
     <div id="team-list"></div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 GoodCord. All rights reserved.</p>
   </footer>
 
+  <!-- Scripts -->
   <script src="data.js"></script>
+  <script>
+    const teamDiv = document.getElementById('team-list');
+    data.team.forEach(member => {
+      const div = document.createElement('div');
+      div.style.marginBottom = "1.5rem";
+      div.innerHTML = `<h3>${member.name} - ${member.role}</h3><p>${member.bio}</p>`;
+      teamDiv.appendChild(div);
+    });
+  </script>
 </body>
 </html>
