@@ -25,7 +25,7 @@ const data = {
   ],
   status: {
     server: "Offline",
-    api: "Offline",
-    last_checked: "2025-09-08 21:00"
+    api: "Online",
+    last_checked: "2025-11-30 12:43"
   }
 };
